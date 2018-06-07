@@ -3,7 +3,7 @@ const clientID = '77e62346179d4e19ac0dc7c98873ff2f';
 const redirectURI = 'http://localhost:3000/';
 
 const Spotify = {
-  getAccessToken: function () {
+  getAccessToken() {
     if (userAccessToken) {
       return userAccessToken;
     }
@@ -83,7 +83,7 @@ const Spotify = {
           headers: {
             Authorization: `Bearer ${accessToken}`
           },
-          body: JSON.stringify({name: trackURIs}),
+          body: JSON.stringify({uris: trackURIs}),
           method: 'POST'
         });
       });
